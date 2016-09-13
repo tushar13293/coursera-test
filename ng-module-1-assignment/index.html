@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheckerApp">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+         input {  width:700px;
+                height:40px;
+                margin-bottom:10px; 
+                font-size:30px;
+                border-style: solid; 
+              }
+        button { width: 200px;
+                 height: 30px;
+                 margin-bottom: 20px;
+             }      
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+<body>
+   <div ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+     <input type="text" ng-model="name" style="border-color:{{colorChange}}" >
+     <h3>Empty item is NOT considered i.e (, ,) is not counted </h3> <br>
+     <button ng-click="check()">Check if too much</button>
+     <div style="color:{{colorChange}}">{{message}}</div>
+   </div>
+
+</body>
+</html>
